@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0)
+
+  if(count%2==0)
+  {
+    document.body.style = 'background: #2a2a2a';
+
+  }
+  else{
+    document.body.style = 'background: #ffffaa';
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container">
+
+      {/* <h1>Count: {count}</h1> */}
+      <div className="center">
+        <button className="btn_day" onClick={() => setCount(count + 1)}>Day Light</button>
+        <button className="btn_night" onClick={() => setCount(count - 1)}>Night Mode</button>
+      </div>
+
     </div>
   );
 }
